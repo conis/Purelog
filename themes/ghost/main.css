@@ -273,6 +273,11 @@ table.plain {
     letter-spacing: -1px;
     margin: 10px 0;
 }
+.blog-title a:link, .blog-title a:hover, .blog-title a:visited{
+    color: #FFF;
+    text-decoration: none;
+}
+
 .blog-description {
     font-family: 'Droid Serif',serif;
     font-size: 1.8rem;
