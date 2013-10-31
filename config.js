@@ -12,11 +12,12 @@ module.exports = {
     "mate_map": {
         "date_format": "yyyy-MM-dd hh:mm:ss",
         "title": "Title",
-        "link": "Link",
+        "link": "ID",
         "publish_date": "Date",
         "id": "ID",
         "excerpt": "Excerpt",
-        "type": "Type"
+        "type": "Type",
+        "status": "Status"
     },
     "router": {
         //重建索引的网址，建议可以使用base64或者md5的字符
@@ -26,6 +27,6 @@ module.exports = {
         "index_page": "/page/:page/?",
         "page": "/:page/",
         //"category": "/category/:category.html",
-        "article": "/archive/:article"
+        "article": "/archive/:article.html"
     }
 }
