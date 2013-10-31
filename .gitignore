@@ -12,6 +12,6 @@ content/*.md
 pids
 logs
 results
-
+git
 npm-debug.log
 node_modules
