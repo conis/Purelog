@@ -93,7 +93,7 @@ function scanLocal(){
 function readMarkdown(file){
     var path = _path.join(__dirname, _config.content, file);
     var content = _fs.readFileSync(path, {encoding: 'utf-8'});
-    var article = exports.article(content, _config.model == 'cache');
+    var article = exports.article(content, _config.model == 'cache', file);
     return article;
 }
 
@@ -105,7 +105,7 @@ exports.make = function(){
 }
 
 //分析一篇md的文章
-exports.article = function(text, full){
+exports.article = function(text, loadContent, filename){
     var metadata = _mde.metadata(text);
     var meta = extraMeta(metadata);
     var cfgMap = _config.mate_map;
@@ -128,6 +128,11 @@ exports.article = function(text, full){
 
     //获取链接
     var link = meta[cfgMap.link];
+    if(!link) {
+        var ext = _path.extname(filename);
+        link = _path.basename(filename, ext);
+    }
+
     var linkRouter = _config.router.article;
     link = linkRouter.replace(':article', link);
 
@@ -143,7 +148,7 @@ exports.article = function(text, full){
         summary: excerpt
     };
 
-    if(full){
+    if(loadContent){
         text = _mde.content(text);
         //提取markdown，并转换
         var content = _markdown.toHTML(text);
