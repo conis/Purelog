@@ -19,6 +19,8 @@ module.exports = {
         "type": "Type"
     },
     "router": {
+        //重建索引的网址，建议可以使用base64或者md5的字符
+        "make": "/make.html",
         "index": "/",
         //首页页
         "index_page": "/page/:page/?",

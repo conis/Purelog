@@ -132,3 +132,9 @@ exports.static = function(req, res, next){
 
     next();
 }
+
+//重建索引
+exports.make = function(req, res, next){
+    _storage.make();
+    res.end('Done');
+}
