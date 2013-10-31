@@ -1,6 +1,7 @@
 module.exports = {
     "title": "Purelog",
     "host": "http://iove.net",
+    "port": 13111,
     "description": "A simple blog based on markdown",
     "meta_keywork": "",
     "meta_description": "",

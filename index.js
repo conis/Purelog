@@ -2,8 +2,8 @@ var _storage = require('./storage')
     , express = require('express')
     , http = require('http')
     , router = require('./router')
-    , config = require('./config.js')
-    , cfgRouter = config.router;
+    , _config = require('./config')
+    , cfgRouter = _config.router;
 
 var init = function(){
     //创建索引
@@ -16,7 +16,7 @@ init();
 var app = express();
 
 app.configure(function(){
-    app.set('port', process.env.PORT || 3000);
+    app.set('port', process.env.PORT || _config.port);
     app.use(express.favicon());
 });
 
