@@ -6,11 +6,14 @@ module.exports = {
     "meta_description": "",
     "page_size": 5,
     "theme": "ghost",
-    "content": "./content",
+    "content": {
+        type: "git",    //local,dropbox,git
+        url: "https://github.com/conis/blog"
+    },
     //支持三个模式，cache(缓存所有)，static(静态文件)，realtime(实时渲染)
     "model": "cache",
     "mate_map": {
-        "date_format": "yyyy-MM-dd hh:mm:ss",
+        "date_format": "YYYY-MM-DD hh:mm:ss",
         "title": "Title",
         "link": "ID",
         "publish_date": "Date",
