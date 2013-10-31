@@ -27,7 +27,7 @@
     {{#articles}}
     <article class="post tag-getting-started">
         <header class="post-header">
-            <span class="post-meta"><time datetime="2013-10-14">{{publish_date}}</time></span>
+            <span class="post-meta"><time datetime="{{datetime publish_date 'YYYY-MM-DD'}}">{{timeAgo publish_date}} [{{datetime publish_date 'YYYY-MM-DD'}}]</time></span>
             <h2 class="post-title"><a href="{{link}}">{{title}}</a></h2>
         </header>
         <section class="post-excerpt">
