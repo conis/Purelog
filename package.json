@@ -1,0 +1,28 @@
+{
+    "name": "Purelog",
+    "version": "0.0.1",
+    "description": "A simple blog",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/conis/Purelog.git"
+    },
+    "keywords": [
+        "blog"
+    ],
+    "dependencies":{
+        "express": "*",
+        "async": "*",
+        "underscore": "*",
+        "handlebars": "*",
+        "jade": "*",
+        "markdown": "*"
+    },
+    "author": "conis",
+    "license": "MIT",
+    "readmeFilename": "README.md",
+    "gitHead": "5a67c870e11e8a7262ed83d7cacafa44aabf3119"
+}
