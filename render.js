@@ -1,7 +1,18 @@
 var handlebars = require('handlebars')
     , fs = require('fs')
     , path = require('path')
+    , _moment = require('moment')
     , config = require('./config.js');
+
+handlebars.registerHelper("datetime", function(date, format, options){
+    var moment = _moment(date);
+    return moment.format(format);
+});
+
+handlebars.registerHelper("timeAgo", function(date, options){
+    var moment = _moment(date);
+    return moment.fromNow();
+});
 
 exports.realtime = function(template, data){
     var templateFile = path.join(__dirname, 'themes', config.theme, template + '.handlebars');
