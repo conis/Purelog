@@ -1,8 +1,8 @@
 module.exports = {
-    "title": "Purelog",
+    "title": "涂雅",
     "host": "http://iove.net",
     "port": 13111,
-    "description": "A simple blog based on markdown",
+    "description": "一个程序员",
     "meta_keywork": "",
     "meta_description": "",
     "page_size": 5,
