@@ -83,7 +83,7 @@ function scanLocal(){
         if(ext != '.md' && ext != '.markdown') return;
 
         var article = readMarkdown(file);
-        _cache.articles.push(article);
+        if(article) _cache.articles.push(article);
     });
 
     refresh();
@@ -110,6 +110,10 @@ exports.article = function(text, full){
     var meta = extraMeta(metadata);
     var cfgMap = _config.mate_map;
 
+    //状态
+    var status = meta[cfgMap.status];
+    //非发布状态，退出
+    if(status != "publish") return false;
     //提取时间
     var publish_date = meta[cfgMap.publish_date];
     publish_date = moment(publish_date, cfgMap.date_format);
