@@ -37,7 +37,7 @@ function pagination(total, pageIndex){
 
     pag.start = pag.pageIndex * pag.pageSize - pag.pageSize;
     pag.end = pag.start + pag.pageSize;
-    if(pag.end >= pag.total) pag.end = pag.total - 1;
+    if(pag.end >= pag.total) pag.end = pag.total;
 
     //下一页
     if(pag.pageIndex < pag.pageCount){
