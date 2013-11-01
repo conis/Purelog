@@ -19,7 +19,10 @@
         "underscore": "*",
         "handlebars": "*",
         "jade": "*",
-        "markdown": "*"
+        "markdown": "*",
+        "markdown-extra": "*",
+        "markdown-meta": "*",
+        "moment": "*"
     },
     "author": "conis",
     "license": "MIT",
