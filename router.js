@@ -56,7 +56,6 @@ function pagination(total, pageIndex){
 function getArticles(articles, pageIndex){
     var pag = pagination(articles.length, pageIndex);
     var result = [];
-    console.log(pag);
     for(var i = pag.start; i < pag.end; i ++){
         result.push(articles[i]);
     }
