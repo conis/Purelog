@@ -54,7 +54,7 @@ exports.convert = function(text, filename){
   var tags = getSignleMeta('tags', meta);
   if(tags){
     //如果存在标签，则分割为数组
-    tags = tags.split(_cfgMarkdown.tag_spliter);
+    tags = tags.split(_cfgMarkdown.tag_spliter || ',');
     _.map(tags, function(tag){
       return tag.trim();
     });
