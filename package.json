@@ -22,7 +22,9 @@
         "markdown": "*",
         "markdown-extra": "*",
         "markdown-meta": "*",
-        "moment": "*"
+        "moment": "*",
+        "strformat": "*",
+        "guess-content-type": "*"
     },
     "author": "conis",
     "license": "MIT",
