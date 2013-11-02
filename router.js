@@ -66,7 +66,7 @@ function getArticles(articles, pageIndex){
 function getTheme(){
   //根据配置，查找使用的主题
   var themeId = _config.plugin.theme.id;
-  var theme = require('../purelog-theme-ghost');
+  var theme = require(themeId);
   if(!theme.supportPurelog){
     throw new Error(_strformat('{0} is invalid theme.', themeId));
   }
@@ -125,25 +125,21 @@ exports.notfound = function(req, res, next){
 
 //处理静态文件
 exports.static = function(req, res, next){
-    var theme = req.params.theme || _config.plugin.theme.id;
     var file = req.params[0];
     var path = getTheme().static(file);
 
     var ext = _path.extname(path);
     //检查文件是否存在
-    if(!_path.existsSync(path)) return next();
+    if(!_fs.existsSync(path)) return next();
 
     res.setHeader('Content-Type', _guessType(path));
-    console.log(res.contentType);
     //用less处理
     switch(ext){
         case '.less':
             break;
         default:
             var content = readStatic(path);
-            res.end(content);
-            return;
-            break;
+            return res.end(content);
     }
 
     next();
