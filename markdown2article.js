@@ -68,22 +68,20 @@ exports.convert = function(text, filename){
 
 /*
   根据key从meta数据中提取一条
-  @param {String} key
+  @param {String | Regex} key 要匹配的key或正则表达式
  */
 function getSignleMeta(key, meta){
-  var keys = _cfgMarkdown[key] || key;
-  if(typeof keys == 'string') keys = [keys];
-  var value;
+  key = _cfgMarkdown[key] || key;
+  if(typeof key == 'string'){
+    return meta[key];
+  };
 
-  //循环所有的key
-  keys.forEach(function(item){
-    if(meta[item]){
-      value = meta[item];
-      //中止循环
+  //循环所有，用正则匹配
+  for(var item in meta){
+    if(key.test(item)){
+      return meta[item];
     }
-  });
-
-  return value;
+  }
 }
 /*
   @summary 从meta字符中分离出具体的meta
