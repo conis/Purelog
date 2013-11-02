@@ -25,7 +25,7 @@ app.get(cfgRouter.index, router.index);
 app.get(cfgRouter.article, router.article);
 app.get(cfgRouter.index_page, router.index);
 app.get(cfgRouter.page, router.page);
-app.get('/themes/:theme/:file', router.static);
+app.get('/themes/:theme/*', router.static);
 app.get(cfgRouter.make, router.make);
 app.all('*', router.notfound);
 
