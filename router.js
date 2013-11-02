@@ -1,12 +1,13 @@
-var render = require('./render')
-    , _storage = require('./storage')
-    , _path = require('path')
-    , _fs = require('fs')
-    , _config = require('./config.js');
+var _storage = require('./storage')
+  , _path = require('path')
+  , _fs = require('fs')
+  , _strformat = require('strformat')
+  , _config = require('./config.js')
+  , _guessType = require('guess-content-type');
 
 function blogInfo(){
     return {
-        theme: _config.theme,
+        theme: getTheme().package.name,
         host: _config.host,
         title: _config.title,
         description: _config.description
@@ -62,6 +63,21 @@ function getArticles(articles, pageIndex){
     return result;
 }
 
+function getTheme(){
+  //根据配置，查找使用的主题
+  var themeId = _config.plugin.theme.id;
+  var theme = require('../purelog-theme-ghost');
+  if(!theme.supportPurelog){
+    throw new Error(_strformat('{0} is invalid theme.', themeId));
+  }
+  return theme;
+}
+
+function render(type, data){
+  var theme = getTheme();
+  return theme.render(type, data);
+}
+
 exports.index = function(req, res, next){
     var pageIndex = req.params.page || 1;
     pageIndex = parseInt(pageIndex);
@@ -73,7 +89,7 @@ exports.index = function(req, res, next){
         articles: getArticles(articles, pageIndex)
     };
 
-    var content = render.realtime('index', data);
+    var content = render('index', data);
     res.end(content);
 }
 
@@ -93,7 +109,7 @@ exports.article = function(req, res, next){
         article: _storage.articleWithUrl(req.path)
     };
 
-    var content = render.realtime('article', data);
+    var content = render('article', data);
     //没有找到缓存，实时渲染
     res.end(content);
 }
@@ -109,21 +125,22 @@ exports.notfound = function(req, res, next){
 
 //处理静态文件
 exports.static = function(req, res, next){
-    var theme = req.params.theme || _config.theme;
-    var file = req.params.file;
+    var theme = req.params.theme || _config.plugin.theme.id;
+    var file = req.params[0];
+    var path = getTheme().static(file);
 
-    file = _path.join(__dirname, 'themes', theme, file);
-    var ext = _path.extname(file);
-
+    var ext = _path.extname(path);
     //检查文件是否存在
-    if(!_path.existsSync(file)) return next();
+    if(!_path.existsSync(path)) return next();
 
+    res.setHeader('Content-Type', _guessType(path));
+    console.log(res.contentType);
     //用less处理
     switch(ext){
         case '.less':
             break;
         default:
-            var content = readStatic(file);
+            var content = readStatic(path);
             res.end(content);
             return;
             break;

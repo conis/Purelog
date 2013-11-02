@@ -1,5 +1,4 @@
-var handlebars = require('handlebars')
-    , fs = require('fs')
+var fs = require('fs')
     , path = require('path')
     , _moment = require('moment')
     , config = require('./config.js');
