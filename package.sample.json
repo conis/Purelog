@@ -1,0 +1,10 @@
+{
+  "main": "app.js",
+  "dependencies":{
+    "express": "*",
+    "purelog": "*",
+    "purelog-storage-local": "*",
+    "purelog-reduce-cache": "*",
+    "purelog-theme-ghost": "*"
+  }
+}
