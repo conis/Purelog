@@ -1,33 +1,42 @@
 {
-    "name": "Purelog",
-    "version": "0.0.1",
-    "description": "A simple blog",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/conis/Purelog.git"
-    },
-    "keywords": [
-        "blog"
-    ],
-    "dependencies":{
-        "express": "*",
-        "async": "*",
-        "underscore": "*",
-        "handlebars": "*",
-        "jade": "*",
-        "markdown": "*",
-        "markdown-extra": "*",
-        "markdown-meta": "*",
-        "moment": "*",
-        "strformat": "*",
-        "guess-content-type": "*"
-    },
-    "author": "conis",
-    "license": "MIT",
-    "readmeFilename": "README.md",
-    "gitHead": "5a67c870e11e8a7262ed83d7cacafa44aabf3119"
+  "name": "purelog",
+  "version": "0.0.1",
+  "description": "A simple blog",
+  "main": "index.js",
+  "preferGlobal": true,
+  "bin": {
+    "purelog": "./lib/make.js"
+  },
+  "scripts": {
+    "test": "mocha",
+    "start": "node-dev .app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/conis/Purelog.git"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "dependencies":{
+    "commander": "1.3.2",
+    "grunt": "*",
+    "express": "*",
+    "async": "*",
+    "underscore": "*",
+    "handlebars": "*",
+    "jade": "*",
+    "markdown": "*",
+    "moment": "*",
+    "strformat": "*",
+    "dank-copyfile": "*",
+    "guess-content-type": "*",
+    "purelog-storage-local": "*",
+    "purelog-reduce-cache": "*",
+    "purelog-theme-ghost": "*"
+  },
+  "author": "conis",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "5a67c870e11e8a7262ed83d7cacafa44aabf3119"
 }
