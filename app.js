@@ -6,7 +6,7 @@ var _express = require('express')
 var app = _express();
 
 app.configure(function(){
-  app.set('port', process.env.PORT || _config.port);
+  app.set('port', process.env.PORT || _config.blog.port);
   app.use(_express.favicon());
 });
 
@@ -15,10 +15,15 @@ var _purelog = require('./index');
 _purelog.root = _path.join(__dirname);
 _purelog.config = _config;
 
-_purelog.router.register(_purelog);
 _purelog.storage.register(_purelog);
+_purelog.theme.register(_purelog);
+_purelog.reduce.register(_purelog);
+_purelog.router.register(_purelog);
+
 //初始化路由
 _purelog.router.initial(app);
+//获取所有数据
+_purelog.storage.fetch();
 
 _http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
