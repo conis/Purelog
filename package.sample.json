@@ -4,6 +4,9 @@
     "express": "*",
     "purelog": "*",
     "purelog-storage-local": "*",
+    "purelog-storage-dropbox": "*",
+    "purelog-storage-git": "*",
+    "purelog-router-rss": "*",
     "purelog-reduce-cache": "*",
     "purelog-theme-ghost": "*"
   }
