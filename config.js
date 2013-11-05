@@ -27,12 +27,19 @@ module.exports = {
     //缓存文章页
     "article": true
   },
+  //优化性能
+  "optimize":{
+    //压缩css
+    "min_css": true,
+    //压缩js
+    "min_js": true
+  },
   //路由
   "routes": {
     //重建索引的网址，建议可以使用base64或者md5的字符。如bWFrZQ==.html
     "make": "/make.html",
     //首页及分布
-    "index": "/(/page/:page/)?",
+    "index": ["/", "/page/:page/"],
     //文章页
     "article": "/archive/:article.html"
   },
@@ -41,7 +48,7 @@ module.exports = {
     //主题插件，只能选择一个
     "theme": {
       //主题唯一的名称，也就是安装时的名称
-      "package": "../../purelog-theme-ghost",
+      "package": "purelog-theme-ghost",
       //与主题相关的选项，可选
       "options":{}
     },
@@ -49,7 +56,7 @@ module.exports = {
     "routes":[
       {
         //插件的唯一名称
-        "package": "../../purelog-router-rss",
+        "package": "purelog-router-rss",
         //插件的配置，可选
         "options": {
           //是否全文输出
@@ -61,7 +68,7 @@ module.exports = {
     ],
     //只读数据的提供者
     "reduce":{
-      "package": "../../purelog-reduce-cache",
+      "package": "purelog-reduce-cache",
       "options":{
         //是否缓存内容
         "cache_content": true
@@ -69,13 +76,13 @@ module.exports = {
     },
     //数据存储的插件，负责数据的存取
     "storage":{
-      "package": "../../purelog-storage-local",
+      "package": "purelog-storage-local",
       //选项
       "options": {
         //文件过滤
         filter: /\.((md)|(markdown))$/i,
         //本地存放的路径，相对于程序远行的目录
-        "source": "./content",
+        "content": "content",
         //meta的映射
         "meta":{
           //发布日期
