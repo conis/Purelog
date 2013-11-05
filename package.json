@@ -21,6 +21,7 @@
   "dependencies":{
     "commander": "1.3.2",
     "grunt": "*",
+    "grunt-prompt": "*",
     "express": "*",
     "async": "*",
     "underscore": "*",
@@ -32,9 +33,13 @@
     "dank-copyfile": "*",
     "guess-content-type": "*",
     "purelog-storage-local": "*",
+    "purelog-storage-git": "*",
+    "purelog-storage-dropbox": "*",
     "purelog-reduce-cache": "*",
     "purelog-theme-ghost": "*",
-    "clean-css": "*"
+    "purelog-router-rss": "*",
+    "clean-css": "*",
+    "fs-extra": "*"
   },
   "author": "conis",
   "license": "MIT",
