@@ -33,7 +33,8 @@
     "guess-content-type": "*",
     "purelog-storage-local": "*",
     "purelog-reduce-cache": "*",
-    "purelog-theme-ghost": "*"
+    "purelog-theme-ghost": "*",
+    "clean-css": "*"
   },
   "author": "conis",
   "license": "MIT",
