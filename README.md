@@ -1,76 +1,41 @@
-#提示
-Beta版本正在开发，试用可以使用v0.0.1这个alpha版本，这个版本我打了一个标签的。
+如果你憎恨Wordpress的臃肿与性能，如果你想专注于写作，如果你正在或者准备使用Markdown写作，如果希望将你的文章保存到Dropbox或者Gibhub，如果你想获取极高的响应速度，如果你是一个Node.js的开发者，那么你一定要尝试一下[Purelog](http://purelog.org)。
 
-1. `git clone https://github.com/conis/Purelog.git`
-2. `cd Purelog`
-3. `git checkout v0.0.1`
+##Purelog的特点
 
-不过我估计v0.0.1这个版本也会出现部署问题，因为我有一个改动被提交上去了。计划一个星期左右会有Beta版本出来，也可能会更快。
+* 极速，Purelog在启动的时候，会将博客的文章读取到内存，完全不需要再读取硬盘，所以响应非常快速
+* 基于Markdown，Purelog基于文件式的Markdown，这就意味你只需要将Markdown文件保存到某个文件夹就可以了
+* 支持Dropbox共享链接的读取，你可以将文章保存至Dropbox，不需要Dropbox的授权
+* 支持Git仓库，你可以将文章提交至Git，然后Purelog会自动索引Git仓库中的文章。
+* 支持多主题
+* 支持插件扩展
 
-#新功能
-1. 支持标签
-2. 支持插件扩展，主题将会是用npm的方式安装
-3. 支持dropbox（这个功能可能会延迟）
-4. 支持上一篇文章和下一篇文章
+##Purelog适合于哪些人群
 
-可以看我最新的一篇文章：[计划用一两周的时间完成Purelog的beta版](http://iove.net/archive/4001.html);
+* 有自己的VPS或者云主机，如Appflog，总之，你需要Node.js的环境
+* 有一定的动手能力，比如说能部署Node.js，会使用`npm install -g purelog`
+* 正在或者准备用Markdown写作
+* 希望专注写作
+* Node.js的开发者，或者其它程序员
 
-重点还是在模块化方向努力，希望以后Purelog就不用怎么改了，有功能用插件实现就可以了。
- 
-#为什么会有Purelog
+如果你有两项匹配，我建议你可以尝试一下Purelog。
 
-我对Ghost抱有很大的期望，等了很久，早早地把Wordpress撤下来，就等Ghost的了。这个项目差不多筹了20万欧元，Markdown和Node.js当然是最吸引我的地方。终于等到项目Release了，结果让我很失望。项目好坏不说，起码它满足不了我的需求，白等了这么久。当然，这只是对我个人来说，相信会有很多人喜欢Ghost的。
+#如何安装Purelog
 
-Ghost的Markdown实时编辑功能是很赞，但这个功能并不是我要的，如果我要在线编辑的话，为什么我还要Markdown呢？而且Markdown有很多客户端，WYSIWYG的浏览器多得去了，如果我要可视化直接用HTML编辑器就好了，何必退而求其次搞一个Markdown的在线编辑器？
+Purelog的安装非常简单，首先要确保你安装了Node.js，然后在命令行按如下步骤：
 
-Ghost不支持文件型的Markdown，而是直接存入数据库，搞什么，为什么要用Markdown？
+1. `npm install -g purelog`，注意这里一定要用`-g`的参数
+2. `cd`至你要安装博客的目录，例如`/var/www/purelog`，这里最好是一个空目录。执行`purelog --init`
+3. 如果执行成功，你会看到成功的提示，根据提示，再执行`npm install && node app.js`
 
-Ghost不支持分类，不支持从Dropbox导入文件，当然也不会支持伟大的Github。
+只需要简单的三步，你的Purelog就能正常运行了，访问http://localhost:13111就可以访问你的博客了。但这时候Purelog还是默认配置，你需要修改一些简单的配置。[如何修改Purelog的配置](http://purelog.org/archive/configure.html)
 
-Ghost不支持自定义路由，那我从原来的博客切换过来怎么办，搜索引擎过来的链接可能全部找不到了。比如说我以前是用[http://iove.net/archive/733.html](http://iove.net/archive/733.html)这样的路径怎么办？
-
-既然如此，那不如自己动手写一个博客系统吧。
-
-#我想要的博客系统
-
-1. 足够快速，Wrodpress太庞大太臃肿了
-2. 足够简单，我不需要评论，也不需要访客计数，更不需要太多的订制化，我只需要一个简单的，用来写作的系统
-3. 支持Markdown，我需要能直接支持Markdown的文件，而不是存到数据库
-4. 支持Dropbox
-5. 支持Github，我希望我的Blog就是一个Github仓库，我会使用它的版本控制系统。
-6. 支持主题
-
-#Purelog的特点
-##目前已经支持的
-
-1. 没有数据库，完全基于文件系统，系统在初始化的时候会扫描所有Markdown文件然后读到缓存，所以，它会足够的快
-2. 支持git，如果配置中指定了git仓库，系统在初始化的时候会更新git，然后再扫描.md文件
-3. 支持多主题，目前仅支持handlebars
-4. 支持自定义路由
-
-##未来版本计划支持的
-1. 支持分类
-2. 支持Page
-3. 支持标签
-4. 支持从Dropbox公开目录中读取Markdown文件
-5. 主题支持handlebars和jade等，支持less
-
-#使用或者Fork
-
-##Github
-[https://github.com/conis/Purelog](https://github.com/conis/Purelog)
-
-##使用
-
-1. 部署好node.js环境
-2. clone Purelog项目至本地目录
-3. cd至Purelog目录中，使用`npm install`安装
-4. 使用`node index.js`启动项目，如果出现错误，请根据提示操作
 
 ##汇报错误
 
-因为目前还在alpha版本，所以问题肯定是非常多的，如果有问题，请提交至 [https://github.com/conis/Purelog/issues](https://github.com/conis/Purelog/issues)
+请提交至 [https://github.com/conis/Purelog/issues](https://github.com/conis/Purelog/issues)
 
-##DEMO
-我的个人博客[涂雅](http://iove.net/)正在使用Purelog
+##授权
+
+基于GPL授权 
+
 
