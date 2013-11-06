@@ -5,4 +5,10 @@ node_modules
 .idea
 .log
 .git
+pids
+logs
+results
 git
+npm-debug.log
+node_modules
+dropbox
