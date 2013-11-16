@@ -234,6 +234,11 @@ a:hover {
     color: #9a9a9a;
 }
 
+.poweredby {
+  font-size: 13px;
+  margin: 5px 0 0 0;
+  color: #555;
+}
 
 /* Pagination
 -------------------------------------------------- */

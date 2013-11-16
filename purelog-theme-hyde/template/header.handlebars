@@ -5,13 +5,17 @@
 
         <div class="colophon">
             <ul class="colophon-links">
+                <li>
+                    <a href="/">首页</a>
+                </li>
                 {{#pages}}
                 <li>
                     <a href="{{link}}">{{title}}</a>
                 </li>
                 {{/pages}}
             </ul>
-            <p>&copy; 2013. All rights reserved.</p>
+            <p class="poweredby">Proudly powered by <a href="{{purelog.url}}" target="_blank">{{purelog.name}}</a> <a href="{{blog.rss}}">RSS</a></p>
+            <p class="poweredby">Designed by <a href="{{theme.url}}" target="_blank">{{theme.title}}</a></p>
         </div>
 
     </div>
