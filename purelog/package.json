@@ -1,0 +1,23 @@
+{
+  "main": "app.js",
+  "dependencies":{
+    "rss": "*",
+    "express": "*",
+    "moment": "*",
+    "handlebars": "*",
+    "async": "*",
+    "underscore": "*",
+    "jade": "*",
+    "markdown": "*",
+    "strformat": "*",
+    "guess-content-type": "*",
+    "clean-css": "*",
+    "fs-extra": "*",
+    "md2json": "*",
+    "purelog-storage-local": "*"
+  },
+  "devDependencies":{
+    "mocha": "*",
+    "expect.js" : "*"
+  }
+}

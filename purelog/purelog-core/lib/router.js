@@ -107,7 +107,7 @@ function getOneArticle(req, res, next){
   if(req.params.page){
     type = 'page';
   };
-  
+
   var content = _purelog.theme.render(type, data);
   //没有找到缓存，实时渲染
   res.end(content);

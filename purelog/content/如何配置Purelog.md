@@ -1,9 +1,9 @@
 <!--
-Title: 如何配置Purelog
+Title: 配置Purelog
 ID: configure
 Date: 2013-11-06 12:21:00
 Status: publish
-Type: post
+Type: page
 Tags: 配置, 指南
 Excerpt: Purelog是一个轻量快速的，完全基于Markdown的，可扩展的博客平台
 -->
