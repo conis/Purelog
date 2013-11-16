@@ -52,7 +52,7 @@ module.exports = {
     //主题插件，只能选择一个
     "theme": {
       //主题唯一的名称，也就是安装时的名称
-      "package": "purelog-theme-ghost",
+      "package": "purelog-theme-hyde",
       //与主题相关的选项，可选
       "options":{}
     },
