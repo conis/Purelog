@@ -12,6 +12,7 @@ exports.initial = function(app){
 
   var router = _purelog.config.routes;
   app.get('/tag/:tag', fetchArticle);
+  applyRules(router.page, app, getOneArticle);
   applyRules(router.index, app, fetchArticle);
   applyRules(router.article, app, getOneArticle);
   applyRules('/themes/:theme/*', app, fetchStatic);
@@ -102,7 +103,12 @@ function getOneArticle(req, res, next){
     article: article
   };
 
-  var content = _purelog.theme.render('article', data);
+  var type = 'article';
+  if(req.params.page){
+    type = 'page';
+  };
+  
+  var content = _purelog.theme.render(type, data);
   //没有找到缓存，实时渲染
   res.end(content);
 }
