@@ -10,7 +10,7 @@ app.configure(function(){
   app.use(_express.favicon());
 });
 
-var _purelog = require('../purelog');
+var _purelog = require('../purelog-core');
 //获取程序运行的根目录
 _purelog.root = _path.join(__dirname);
 _purelog.config = _config;
