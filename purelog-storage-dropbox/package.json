@@ -1,0 +1,28 @@
+{
+  "name": "purelog-storage-dropbox",
+  "version": "0.0.1",
+  "description": "从dropbox共享链接中读取博客文章，适用于Purelog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/conis/purelog-storage-dropbox.git"
+  },
+  "keywords": [
+    "purelog",
+    "storage",
+    "dropbox"
+  ],
+  "dependencies":{
+    "download-dropbox-share": "*",
+    "purelog-storage-local": "*"
+  },
+  "devDependencies":{
+    "mocha": "*",
+    "expect.js" : "*"
+  },
+  "author": "conis",
+  "license": "MIT"
+}

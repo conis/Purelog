@@ -1,0 +1,29 @@
+{
+  "name": "purelog-router-rss",
+  "version": "0.0.2",
+  "description": "实现Purelog的RSS功能",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/conis/purelog-router-rss"
+  },
+  "keywords": [
+    "purelog",
+    "router",
+    "rss",
+    "blog"
+  ],
+  "dependencies":{
+    "rss": "*",
+    "underscore": "*"
+  },
+  "devDependencies":{
+    "mocha": "*",
+    "expect.js" : "*"
+  },
+  "author": "conis",
+  "license": "MIT"
+}

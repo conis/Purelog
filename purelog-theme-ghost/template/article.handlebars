@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{article.title}} - {{blog.title}}</title>
+  {{>head}}
+</head>
+<body class="post-template">
+<main class="content" role="main">
+    <article class="post">
+        <header class="post-header">
+            <a id="blog-logo" href="/">
+              {{blog.title}}
+            </a>
+        </header>
+        <span class="post-meta"><time datetime="{{datetime article.publish_date 'YYYY-MM-DD'}}">{{datetime article.publish_date 'YYYY-MM-DD hh:mm'}}</time> </span>
+
+        <h1 class="post-title">{{article.title}}</h1>
+
+        <section class="post-content">
+          {{article.content}}
+        </section>
+
+        <footer class="post-footer">
+            <ul>
+              {{#if article.previous}}
+                  <li class="previous-article">
+                      Previous: <a href="{{article.previous.link}}">{{article.previous.title}}</a>
+                  </li>
+              {{/if}}
+              {{#if article.next}}
+                  <li class="next-article">
+                      Next: <a href="{{article.next.link}}">{{article.next.title}}</a>
+                  </li>
+              {{/if}}
+              {{#if article.tags}}
+                  <li class="tag">
+                      Tags:
+                    {{#article.tags}}
+                        <a href="/tag/{{.}}">{{.}}</a>
+                    {{/article.tags}}
+                  </li>
+              {{/if}}
+            </ul>
+        </footer>
+    </article>
+
+</main>
+
+{{>footer}}
+</body>
+</html>

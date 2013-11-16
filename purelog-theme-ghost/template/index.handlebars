@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{blog.title}}</title>
+    {{>head}}
+</head>
+<body class="home-template">
+{{>header}}
+<main class="content" role="main">
+    {{#articles}}
+    <article class="post tag-getting-started">
+        <header class="post-header">
+            <span class="post-meta"><time datetime="{{datetime publish_date 'YYYY-MM-DD'}}">{{timeAgo publish_date}} [{{datetime publish_date 'YYYY-MM-DD'}}]</time></span>
+            <h2 class="post-title"><a href="{{link}}">{{title}}</a></h2>
+        </header>
+        <section class="post-excerpt">
+            <p>{{excerpt}}&hellip;</p>
+        </section>
+    </article>
+    {{/articles}}
+
+
+    <nav class="pagination" role="pagination">
+        {{#if nav.previous}}
+            <a class="newer-posts" href="/page/{{nav.previous}}/">&larr; Newer Posts</a>
+        {{/if}}
+        <span class="page-number">Page {{nav.pageIndex}} of {{nav.pageCount}}</span>
+        {{#if nav.next}}
+                <a class="older-posts" href="/page/{{nav.next}}/">Older Posts &rarr;</a>
+        {{/if}}
+    </nav>
+
+{{>footer}}
+</main>
+</body>
+</html>

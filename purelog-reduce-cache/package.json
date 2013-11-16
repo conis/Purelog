@@ -1,0 +1,24 @@
+{
+  "name": "purelog-reduce-cache",
+  "version": "0.0.2",
+  "description": "Purelog的reduce模块，用于缓存文章及索引",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:conis/purelog-reduce-cache.git"
+  },
+  "keywords": [
+    "blog",
+    "purelog",
+    "reduce"
+  ],
+  "dependencies":{
+    "underscore": "*"
+  },
+  "author": "conis",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

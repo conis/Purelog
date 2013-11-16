@@ -1,0 +1,13 @@
+{
+  "main": "app.js",
+  "dependencies":{
+    "express": "*",
+    "purelog": "*",
+    "purelog-storage-local": "*",
+    "purelog-storage-dropbox": "*",
+    "purelog-st orage-git": "*",
+    "purelog-router-rss": "*",
+    "purelog-reduce-cache": "*",
+    "purelog-theme-ghost": "*"
+  }
+}
