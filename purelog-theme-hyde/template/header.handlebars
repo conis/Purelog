@@ -1,0 +1,18 @@
+<header class="masthead">
+    <div class="masthead-inner">
+        <h1>{{blog.title}}</h1>
+        <p class="lead">{{blog.description}}</p>
+
+        <div class="colophon">
+            <ul class="colophon-links">
+                {{#pages}}
+                <li>
+                    <a href="{{link}}">{{title}}</a>
+                </li>
+                {{/pages}}
+            </ul>
+            <p>&copy; 2013. All rights reserved.</p>
+        </div>
+
+    </div>
+</header>

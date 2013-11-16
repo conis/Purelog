@@ -1,0 +1,28 @@
+{
+  "name": "purelog-theme-ghost",
+  "version": "0.0.5",
+  "description": "Ghost的主题",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/conis/purelog-theme-ghost"
+  },
+  "keywords": [
+    "purelog",
+    "theme"
+  ],
+  "dependencies":{
+    "handlebars": "*",
+    "moment": "*",
+    "underscore": "*"
+  },
+  "devDependencies":{
+    "mocha": "*",
+    "expect": "*"
+  },
+  "author": "conis",
+  "license": "MIT"
+}

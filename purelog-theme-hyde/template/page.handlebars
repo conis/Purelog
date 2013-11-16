@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{article.title}} - {{blog.title}}</title>
+  {{>head}}
+</head>
+<body class="home-template">
+{{>header}}
+<div class="content container">
+    <div class="post">
+        <h1>{{article.title}}</h1>
+        <span class="post-date">{{datetime article.publish_date 'YYYY-MM-DD hh:mm'}}</span>
+      {{article.content}}
+    </div>
+</div>
+</body>
+</html>
