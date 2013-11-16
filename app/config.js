@@ -36,6 +36,8 @@ module.exports = {
   },
   //路由
   "routes": {
+    //page的路由
+    "page": "/:page",
     //重建索引的网址，建议可以使用base64或者md5的字符。如bWFrZQ==.html
     "make": "/make.html",
     //首页及分布
