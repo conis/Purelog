@@ -5,9 +5,10 @@
     "purelog": "*",
     "purelog-storage-local": "*",
     "purelog-storage-dropbox": "*",
-    "purelog-st orage-git": "*",
+    "purelog-storage-git": "*",
     "purelog-router-rss": "*",
     "purelog-reduce-cache": "*",
-    "purelog-theme-ghost": "*"
+    "purelog-theme-ghost": "*",
+    "purelog-theme-hyde": "*"
   }
 }
