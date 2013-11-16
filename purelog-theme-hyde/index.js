@@ -25,8 +25,6 @@ _handlebars.registerHelper("timeAgo", function(date, options){
 //==============注册partial=========
 //head
 _handlebars.registerPartial("head", readFile('head'));
-//footer
-_handlebars.registerPartial("footer", readFile('footer'));
 //header
 _handlebars.registerPartial("header", readFile('header'));
 
