@@ -16,7 +16,8 @@
   ],
   "dependencies":{
     "handlebars": "*",
-    "moment": "*"
+    "moment": "*",
+    "underscore": "*"
   },
   "devDependencies":{
     "mocha": "*",
