@@ -5,4 +5,9 @@
             <h2 class="blog-description">{{blog.description}}</h2>
         </div>
     </div>
+    <nav>
+        {{#pages}}
+          <li><a href="{{link}}">{{title}}</a></li>
+        {{/pages}}
+    </nav>
 </header>
