@@ -14,7 +14,8 @@
     "clean-css": "*",
     "fs-extra": "*",
     "md2json": "*",
-    "purelog-storage-local": "*"
+    "purelog-storage-local": "*",
+    "download-dropbox-share": "*"
   },
   "devDependencies":{
     "mocha": "*",
