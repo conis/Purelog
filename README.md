@@ -19,16 +19,23 @@
 
 如果你有两项匹配，我建议你可以尝试一下Purelog。
 
-#如何安装Purelog
+#如何使用
 
+##博主
 Purelog的安装非常简单，首先要确保你安装了Node.js，然后在命令行按如下步骤：
 
-1. `npm install -g purelog`，注意这里一定要用`-g`的参数
+1. `npm install -g purelog-cli`，注意这里一定要用`-g`的参数
 2. `cd`至你要安装博客的目录，例如`/var/www/purelog`，这里最好是一个空目录。执行`purelog --init`
 3. 如果执行成功，你会看到成功的提示，根据提示，再执行`npm install && node app.js`
 
 只需要简单的三步，你的Purelog就能正常运行了，访问http://localhost:13111就可以访问你的博客了。但这时候Purelog还是默认配置，你需要修改一些简单的配置。[如何修改Purelog的配置](http://purelog.org/archive/configure.html)
 
+##开发者
+
+1. `git clone https://github.com/conis/Purelog.git'，将Purelogclone至本地
+2. `cd Purelog/purelog`
+3. `npm install`
+4. `node-dev app.js`
 
 ##汇报错误
 
