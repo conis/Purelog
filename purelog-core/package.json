@@ -1,0 +1,31 @@
+{
+  "name": "purelog",
+  "version": "0.1.0",
+  "description": "A simple blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node-dev .app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/conis/Purelog.git"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "dependencies":{
+    "async": "*",
+    "underscore": "*",
+    "handlebars": "*",
+    "jade": "*",
+    "markdown": "*",
+    "moment": "*",
+    "strformat": "*",
+    "guess-content-type": "*",
+    "clean-css": "*"
+  },
+  "author": "conis",
+  "license": "GPL",
+  "readmeFilename": "README.md"
+}
