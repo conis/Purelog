@@ -12,6 +12,8 @@ function getTagKey(tag){
  */
 exports.initial = function(){
   _cache = {
+    //已经排序好的页
+    sortedPages: [],
     //已经排序好的文章
     sortedArticles: [],
     //文章的内容，如果需要缓存内容的话
@@ -34,8 +36,18 @@ exports.initial = function(){
   构建索引，包括排序
  */
 exports.indexMaker = function(){
-  //排序文章
-  _cache.sortedArticles = sortArticle(_cache.originArticles);
+  //排序的文章
+  var articles = sortArticle(_cache.originArticles);
+  //过滤出post
+  _cache.sortedArticles = _.filter(articles, function(item){
+    return _cache.originArticles[item].type == 'post';
+  });
+
+  //过滤出page
+  _cache.sortedPages = _.filter(articles, function(item){
+    return _cache.originArticles[item].type == 'page';
+  });
+
   //将indexes中的所有标签文章进行排序
   _cache.originTags.forEach(function(tag){
     //找到索引中对应标签的所有文章
@@ -43,9 +55,12 @@ exports.indexMaker = function(){
     var articles = sortArticle(_cache.indexes.tags[keyTag].articles, function(index){
       return _cache.originArticles[index];
     });
-    _cache.indexes.tags[keyTag].articles = articles;
+
+    //tag只匹配post
+    _cache.indexes.tags[keyTag].articles = _.filter(articles, function(item){
+      return _cache.originArticles[item].type == 'post';
+    });
   });
-  //排序标签，可以按使用频率排序
 }
 
 /*
@@ -170,6 +185,18 @@ exports.oneArticle = function(url, tag){
   return article;
 }
 
+/*
+  获取所有的page
+ */
+exports.pages = function(){
+  return _.map(_cache.sortedPages, function(item){
+    var article = _cache.originArticles[item];
+    return {
+      link: article.link,
+      title: article.title
+    };
+  });
+}
 /*
   查找标签
   @param {Object} options - 选项
