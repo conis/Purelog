@@ -71,6 +71,11 @@ exports.appendArticle = function(article, cacheContent){
     return;
   }
 
+  if(article.status != 'publish'){
+    console.log('文章【%s】状态不是publish', article.title);
+    return;
+  }
+
   //缓存文章的内容
   if(cacheContent){
     _cache.articleContents.push(article.content);
