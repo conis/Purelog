@@ -1,6 +1,6 @@
 {
   "name": "purelog-reduce-cache",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Purelog的reduce模块，用于缓存文章及索引",
   "main": "index.js",
   "scripts": {
