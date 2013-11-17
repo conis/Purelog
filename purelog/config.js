@@ -23,7 +23,7 @@ module.exports = {
     "scripts":{
       //head最后面的代码
       "end_head": "<!--end_head-->",
-      //body后面的代码
+      //body最后面的代码
       "end_body": "<!--end_body-->"
     }
   },

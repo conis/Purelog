@@ -18,7 +18,14 @@ module.exports = {
     //meta中的说明
     "meta_description": "A simple blog based on markdown",
     //文章每页大小
-    "page_size": 5
+    "page_size": 5,
+    //附加代码
+    "scripts":{
+      //head最后面的代码
+      "end_head": "<!--end_head-->",
+      //body后面的代码
+      "end_body": "<!--end_body-->"
+    }
   },
   //是否缓存页面为html，即缓存为静态内容，不用每次都渲染
   "cache": {
