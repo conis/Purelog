@@ -25,10 +25,24 @@ exports.register = function(purelog){
 }
 
 exports.notfound = function(req, res, next){
+  var data = baseData(req);
+
   res.statusCode = 404;
-  res.end('Not found');
+  var content = _purelog.theme.render('404', data);
+  res.end(content);
 }
 
+function baseData(req){
+  return {
+    purelog: _purelog.package,
+    blog: _purelog.config.blog,
+    theme: _purelog.theme.package,
+    env: {
+      host: req.host,
+      path: req.path
+    }
+  };
+}
 //计算分页信息
 function pagination(total, pageIndex){
   var pageSize = _purelog.config.page_size || 5;
@@ -70,19 +84,15 @@ function fetchArticle(req, res, next){
   var pageIndex = req.params.page || 1;
   pageIndex = parseInt(pageIndex);
 
-  var nav = pagination(_purelog.reduce.articleCount(), pageIndex);
-  var data = {
-    nav: nav,
-    pages: _purelog.reduce.pages(),
-    purelog: _purelog.package,
-    blog: _purelog.config.blog,
-    theme: _purelog.theme.package,
-    articles: _purelog.reduce.findArticle({
-      start: nav.start,
-      end: nav.end,
-      tag: req.params.tag
-    })
-  };
+  var nav = pagination(_purelog.reduce.articleCount(),pageIndex);
+  var data = baseData(req);
+  data.nav = nav;
+  data.pages = _purelog.reduce.pages();
+  data.articles = _purelog.reduce.findArticle({
+    start: nav.start,
+    end: nav.end,
+    tag: req.params.tag
+  });
 
   var content = _purelog.theme.render('index', data);
   res.end(content);
@@ -95,13 +105,9 @@ function getOneArticle(req, res, next){
   }
 
   //如果找到缓存，则直接从缓存中读取
-  var data = {
-    purelog: _purelog.package,
-    theme: _purelog.theme.package,
-    blog: _purelog.config.blog,
-    pages: _purelog.reduce.pages(),
-    article: article
-  };
+  var data = baseData(req);
+  data.pages = _purelog.reduce.pages();
+  data.article = article;
 
   var type = 'article';
   if(req.params.page){
