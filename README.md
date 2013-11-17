@@ -12,7 +12,7 @@
 ##Purelog适合于哪些人群
 
 * 有自己的VPS或者云主机，如Appflog，总之，你需要Node.js的环境
-* 有一定的动手能力，比如说能部署Node.js，会使用`npm install -g purelog`
+* 有一定的动手能力，比如说能部署Node.js，会使用简单的命令行，如`npm install -g purelog-cli`
 * 正在或者准备用Markdown写作
 * 希望专注写作
 * Node.js的开发者，或者其它程序员
@@ -32,7 +32,7 @@ Purelog的安装非常简单，首先要确保你安装了Node.js，然后在命
 
 ##开发者
 
-1. `git clone https://github.com/conis/Purelog.git'，将Purelogclone至本地
+1. `git clone https://github.com/conis/Purelog.git`，将Purelogclone至本地
 2. `cd Purelog/purelog`
 3. `npm install`
 4. `node-dev app.js`
