@@ -1,6 +1,6 @@
 {
   "name": "purelog-theme-hyde",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Hyde的主题",
   "main": "index.js",
   "scripts": {
