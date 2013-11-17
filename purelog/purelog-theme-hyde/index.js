@@ -27,6 +27,8 @@ _handlebars.registerHelper("timeAgo", function(date, options){
 _handlebars.registerPartial("head", readFile('head'));
 //header
 _handlebars.registerPartial("header", readFile('header'));
+//footer
+_handlebars.registerPartial("footer", readFile('footer'), {noEscape: true});
 
 //必需存在supportPurelog，以便校验合法性
 exports.supportPurelog = true;
@@ -84,7 +86,7 @@ function getTemplate(type){
   if(!template){
     //没有缓存，则读取文件
     var text = readFile(type);
-    template = _handlebars.compile(text, {noEscape: true});
+    template = _handlebars.compile(text);
     _cache[type] = template;
   }
   return template;
