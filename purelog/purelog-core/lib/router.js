@@ -3,6 +3,7 @@ var _path = require('path')
   , _strformat = require('strformat')
   , _purelog = null
   , _plugins = []
+  , _url = require('url')
   , _guessType = require('guess-content-type');
 
 //初始化路由
@@ -26,7 +27,6 @@ exports.register = function(purelog){
 
 exports.notfound = function(req, res, next){
   var data = baseData(req);
-
   res.statusCode = 404;
   var content = _purelog.theme.render('404', data);
   res.end(content);
@@ -38,7 +38,7 @@ function baseData(req){
     blog: _purelog.config.blog,
     theme: _purelog.theme.package,
     env: {
-      host: req.host,
+      host: req.headers.host,
       path: req.path
     }
   };

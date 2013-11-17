@@ -234,12 +234,6 @@ a:hover {
     color: #9a9a9a;
 }
 
-.poweredby {
-  font-size: 13px;
-  margin: 5px 0 0 0;
-  color: #555;
-}
-
 /* Pagination
 -------------------------------------------------- */
 
@@ -338,4 +332,20 @@ a:hover {
         border: 1px solid #eee;
     }
 
+}
+
+/*附加*/
+.poweredby {
+    font-size: 13px;
+    margin: 5px 0 0 0;
+    color: #555;
+}
+
+.not_found{
+    text-align:  center;
+    margin-top: 10%;
+}
+
+.not_found h1{
+    font-size: 15em;
 }

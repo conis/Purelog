@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>404 Not Found - {{blog.title}}</title>
+  {{>head}}
+</head>
+<body class="home-template">
+{{>header}}
+<div class="content container">
+    <div class="not_found">
+        <h1>404</h1>
+        <p>你访问的地址<code>{{env.host}}{{env.path}}</code>不存在</p>
+    </div>
+</div>
+{{>footer}}
+</body>
+</html>
