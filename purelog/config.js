@@ -12,11 +12,11 @@ module.exports = {
     //使用的端口号
     "port": 13111,
     //博客描述
-    "description": "A simple blog based on markdown",
+    "description": "一个基于文件型Markdown的轻型博客系统",
     //meta中的关键字
     "meta_keywork": "purelog, blog, node.js",
     //meta中的说明
-    "meta_description": "A simple blog based on markdown",
+    "meta_description": "一个基于文件型Markdown的轻型博客系统",
     //文章每页大小
     "page_size": 5,
     //附加代码
