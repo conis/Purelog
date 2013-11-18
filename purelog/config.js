@@ -52,7 +52,7 @@ module.exports = {
     //首页及分布
     "index": ["/", "/page/:page/"],
     //文章页
-    "article": "/archive/:article.html"
+    "article": "/archives/:article.html"
   },
   //插件列表
   "plugins":{
@@ -74,6 +74,16 @@ module.exports = {
           full: true,
           //输出多少条记录
           limit: 20
+        }
+      },{
+        //插件的唯一名称
+        "package": "../../purelog-router-redirect",
+        //插件的配置，可选
+        "options": {
+          routes: [
+            {path: /^\/(\d+)\/?$/i, to: "/archives/$1.html"},
+            {path: /^\/archive\/(.+)\.html$/i, to: "/archives/$1.html"}
+          ]
         }
       }
     ],

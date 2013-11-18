@@ -52,7 +52,7 @@ module.exports = {
     //首页及分布
     "index": ["/", "/page/:page/"],
     //文章页
-    "article": "/archive/:article.html"
+    "article": "/archives/:article.html"
   },
   //插件列表
   "plugins":{
