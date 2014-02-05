@@ -1,4 +1,4 @@
-如果你憎恨Wordpress的臃肿与性能，如果你想专注于写作，如果你正在或者准备使用Markdown写作，如果希望将你的文章保存到Dropbox或者Gibhub，如果你想获取极高的响应速度，如果你是一个Node.js的开发者，那么你一定要尝试一下[Purelog](http://purelog.org)。
+如果你憎恨Wordpress的臃肿与性能，如果你想专注于写作，如果你正在或者准备使用Markdown写作，如果希望将你的文章保存到Dropbox或者Github，如果你想获取极高的响应速度，如果你是一个Node.js的开发者，那么你一定要尝试一下[Purelog](http://purelog.org)。
 
 ##Purelog的特点
 
