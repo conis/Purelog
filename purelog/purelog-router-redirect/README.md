@@ -1,8 +1,8 @@
-##purelog-router-redicrect
+## purelog-router-redicrect
 
 实现博客的301功能，适用于博客搬家后改地址，适用于Purelog
 
-##配置
+## 配置
 
 1. 打开配置文件`config.js`
 2. 在routes键增加一个配置，你需要对正则表达式有一定的了解，才能进行配置。示例配置如下：

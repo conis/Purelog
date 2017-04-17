@@ -10,14 +10,14 @@ Excerpt: 介绍如何开发Purelog的插件，主要介绍Storage插件、Router
 
 给Purelog开发插件是一件非常容易的事情，Purelog重度依赖插件，很多工作都需要插件来完成，如果你正在学习或者使用Node.js，那么请参与进来吧。
 
-##Purelog插件的类型
+## Purelog插件的类型
 
 * Storage - 负责数据存取，例如扫描本地文件夹的Markdown文件或者从Dropbox中下载Markdown文件
 * Reduce - 负责整理数据，从Storage中读取出来的数据是无序的，所以需要索引和排序。Storage将数据读取出来之后，就完全放弃所有数据，之后数据由Reduce接管。
 * Router - 路由插件可以截获路由，然后自己做相应的处理，例如`purelog-router-rss`就会截获http://domain.com/rss/这个地址，并提供rss输出。
 * Theme	- 主题类插件，负责界面的呈现，可以由任何一种模板语言开发，如handlebars、jade等等。
 
-##程序接口
+## 程序接口
 
 purelog接口可以提供所有的操作，purelog提供的接口如下：
 
@@ -30,7 +30,7 @@ purelog接口可以提供所有的操作，purelog提供的接口如下：
 * `package` - Purelog的包信息，包括名称，版本等信息
 
 
-##统一接口
+## 统一接口
 
 所有插件都需要提供下列这些接口，即实现`exports.xxx`。
 
@@ -46,11 +46,11 @@ purelog接口可以提供所有的操作，purelog提供的接口如下：
 	
 * `register` - 用于注册插件的方法，该方法会提供两个参数，分别是`purelog`和`optons`，`purelog`提供整个Purelog可操作的方法，`options`则是读取`config.js`中相应的配置信息。
 
-##storage插件
+## storage插件
 
 storage插件需要实现原始数据的读取及保存功能，实现key/value数据的保存功能。
 
-###fetch 
+### fetch 
 
 用于获取所有的文章，每获取一篇文章，会调用`iterator`，获取完成后，会调用`done`
 
@@ -63,17 +63,17 @@ storage插件需要实现原始数据的读取及保存功能，实现key/value�
 	
 其它的尝未实现，暂不介绍
 	
-##reduce插件
+## reduce插件
 
-###initial
+### initial
 
 初始化数据，例如清空缓存
 
-###indexMaker
+### indexMaker
 
 重建文章的索引
 
-###getArticleContent
+### getArticleContent
 
 	/*
 	  根据url，获取文章的内容
@@ -81,14 +81,14 @@ storage插件需要实现原始数据的读取及保存功能，实现key/value�
 	 */
 	exports.getArticleContent = function(url)
 	
-###appendArticle
+### appendArticle
 	/*
 	  添加文章
 	  @param {Object} article - 文章的JSON对象
 	 */
 	exports.appendArticle = function(article){
 	
-###findArticle
+### findArticle
 
 	/*
 	  查找获取文章
@@ -104,7 +104,7 @@ storage插件需要实现原始数据的读取及保存功能，实现key/value�
 	 */
 	exports.findArticle = function(options)
 	
-###articleCount
+### articleCount
 	/*
 	  返回文章的总数量
 	  @param {undefined | String} tag - 如果指定标签，则返回该标签下的文章
@@ -112,7 +112,7 @@ storage插件需要实现原始数据的读取及保存功能，实现key/value�
 	 */
 	exports.articleCount = function(tag)
 
-###oneArticle
+### oneArticle
 	/*
 	  获取一篇文章
 	  @param {String} url - 文章的url
@@ -121,7 +121,7 @@ storage插件需要实现原始数据的读取及保存功能，实现key/value�
 	exports.oneArticle = function(url, tag)
 	
 	
-###findTag
+### findTag
 	/*
 	  查找标签
 	  @param {Object} options - 选项
@@ -134,8 +134,8 @@ storage插件需要实现原始数据的读取及保存功能，实现key/value�
 	 */
 	exports.findTag = function(options)
 	
-##router插件
-###routes
+## router插件
+### routes
 
 返回要接管的路由列表，一个典型的路由如下：
 
@@ -155,11 +155,11 @@ storage插件需要实现原始数据的读取及保存功能，实现key/value�
 * `trigger` - 解发的方法，注意，这个触发的方法在router插件中，必需是公开的方法，即由exports实现的方法
 
 
-##theme插件
+## theme插件
 
 theme将会有一篇文章专门讲，这里只说接口
 
-##render
+## render
 
 	/*
 	  @summary 渲染内容
@@ -169,7 +169,7 @@ theme将会有一篇文章专门讲，这里只说接口
 	  */
 	exports.render = function(type, data)
 
-##static
+## static
 	/*
 	  有些时候可能需要进行路径转换
 	  @summary 返回主题中的静态资源路径
