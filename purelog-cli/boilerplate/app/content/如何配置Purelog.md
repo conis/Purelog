@@ -14,7 +14,7 @@ Purelog是一个高度可配置的博客，除了插件之外，它还支持很�
 
 Purelog的配置采用JSON格式，一个标准的配置文件请参考[这里](https://gist.github.com/conis/7330792)
 
-##blog
+## blog
 
 
 `blog`键用于配置博客的基本信息，包含作者、博客标题等
@@ -30,7 +30,7 @@ Purelog的配置采用JSON格式，一个标准的配置文件请参考[这里](
 * page_size - 文章分页大小
 
 
-##cache
+## cache
 
 `cache`键负责缓存的设置（功能暂未实现），这里的缓存是直接缓存html页，如果缓存，则下次请求的时候直接返回已经渲染的html，不需要再经模块渲染，如果你使用了nginx反向代理，并且代理开启了缓存，则不需要设置这里的缓存
 
@@ -38,14 +38,14 @@ Purelog的配置采用JSON格式，一个标准的配置文件请参考[这里](
 * article - 是否缓存文章页，默认为`true`
 
 
-##optimize
+## optimize
 
 `optimize`键负责优化相关的设置
 
 * min_css - 是事最小化压缩css，默认为`true`
 * min_js - 是否最小化压缩js，默认为`true`
 
-##routes
+## routes
 
 `routes`负责处理路由规则，但优先级比插件中的路由要低，这就意味着，如果某个路由插件也处理了`/`这个路由，你的首页将会被这个插件接管。注意路由地址都要以`/`开始，`/make.html`是一个合法的路由，而`make.html`将会是404错误。
 
@@ -57,7 +57,7 @@ Purelog的配置采用JSON格式，一个标准的配置文件请参考[这里](
 
 `article` - 文章页的路由，这里暂不支持多路由。默认为`/archive/:article.html`
 
-##plugins
+## plugins
 
 `plugins`是Purelog一个非常重要的配置项，`plugins`键下有四个子键，分别对应着Purelog四种不同类型的插件，除了`routes`可以是多选之外，其它的插件都只能使用一个。
 
@@ -65,25 +65,25 @@ Purelog的配置采用JSON格式，一个标准的配置文件请参考[这里](
 
 官方的插件配置，请参考文章最后。
 
-###theme
+### theme
 
 `theme`负责主题插件的配置，如果你需要换主题，首先要用`npm install purelog-theme-name`，再将这里改为`purelog-theme-name`即可。
 
-###routes
+### routes
 
 `routes`负责路由插件的配置，默认情况已经配置了`purelog-router-rss`这个插件，负责处理Purelog的rss输出。
 
 
-###reduce
+### reduce
 
 `reduce`负责处理数据整理的插件，默认情况下，安装了`purelog-reduce-cache`，`purelog-reduce-cache`会将数据全部放在内存中，如果你不希望文章被缓存在内存中，你可以使用其它存储在数据中的插件。
 
 
-###storage
+### storage
 
 `storage`是负责存取数据的插件，默认情况，安装了·purelog-storage-local·的插件，这个插件将会在本地文件夹中读取文章。官方还提供`purelog-storage-dropbox`和`purelog-storage-git`两个插件，用于读取dropbox与git的文章，这两个插件默认是已经安装的，你可以根据自行选择替换。
 
-##插件配置
+## 插件配置
 
 请访问 [官方默认插件介绍及配置](http://purelog.org/archive/plugin-configure.html)
 
